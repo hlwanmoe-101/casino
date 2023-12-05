@@ -8,7 +8,7 @@ function Card(props){
     }
     return(
         <div className="col-12 col-md-6 col-lg-2 my-2">
-            <figure className="imghvr-shutter-out-vert">
+            <figure className="imghvr-shutter-out-vert rounded-2 shadow-sm">
                  <h5 className="text-center custom-text-bg">{props.jacks ? props.jacks.length>0 ? "$"+props.jacks[0].amount : "" : ""}</h5>
                 <img src={props.game.image} alt="Game"></img>
                 <h4 className="ribbon">{rib}</h4>
