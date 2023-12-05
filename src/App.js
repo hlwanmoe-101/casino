@@ -16,13 +16,19 @@ function App() {
   const[game,setGame]=useState([])
   const[jackpots,setJackpot]=useState([])
 
-  useEffect(()=>{
-    fetch("https://stage.whgstage.com/front-end-test/jackpots.php")
-    .then((response)=>response.json())
-    .then(json=>{
-        setJackpot(json)
-    });
-    },[])
+    const fetchData = () => {
+      fetch("https://stage.whgstage.com/front-end-test/jackpots.php")
+        .then((response) => response.json())
+        .then(json => setJackpot(json))
+    };
+  
+    useEffect(() => {
+      fetchData();
+      const intervalId = setInterval(() => {
+        fetchData();
+      }, 6000);
+      return () => clearInterval(intervalId);
+    }, []); 
   useEffect(()=>{
     fetch("https://stage.whgstage.com/front-end-test/games.php")
     .then((response)=>response.json())
