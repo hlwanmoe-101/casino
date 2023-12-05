@@ -10,7 +10,7 @@ import RoulettePage from './pages/RoulettePage';
 import TablePage from './pages/TablePage';
 import PockerPage from './pages/PockerPage';
 import OtherPage from './pages/OtherPage';
-import { BrowserRouter, Link, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 function App() {
   const[game,setGame]=useState([])

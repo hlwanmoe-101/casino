@@ -8,7 +8,7 @@ const TopPage=({data})=>{
   const location=useLocation();
   let { game, jackpots } = data;
 
-  const newG=data.game.filter((game) => game.categories.includes('top'))
+  const newG=game.filter((game) => game.categories.includes('top'))
   return (
     <div className="">
       <Navbar data={location.pathname}/>
